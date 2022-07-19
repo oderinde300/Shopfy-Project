@@ -64,7 +64,7 @@ const HighlightedProduct = (props) => {
                     <p className={classes['highlighted-product-description']}>{props.description}</p>
                 </div>
                 <div>
-                    <h1>Price: {`${props.price}$`} </h1>
+                    <h1>Price: {`$${props.price}`} </h1>
                     <div className={classes.actions}>
                         <button onClick={onReduce}>−</button>
                         <span className={classes.quantity}> {productQuantity}</span>

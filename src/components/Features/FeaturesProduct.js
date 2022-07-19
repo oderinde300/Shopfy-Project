@@ -8,7 +8,7 @@ const FeaturesProduct = (props) => {
                 <img src={props.image} alt={props.name} />
                 <div>
                     <p>{props.name}</p>
-                    <p>Price: {`${props.price}$`}</p>
+                    <p>Price: {`$${props.price}`}</p>
                 </div>
             </Link>
         </section>

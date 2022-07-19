@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch, Redirect, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 
 import Notification from "./components/Layout/Notifaction";
@@ -19,12 +19,31 @@ import ComputerProductsPage from "./pages/ComputerProductsPage";
 import HomeAppliancesProductsPage from "./pages/HomeAppliancesProductsPage";
 import GameProductsPage from "./pages/GameProductsPage";
 import TelevisionSetProductsPage from "./pages/TelevisionSetProductsPage";
+import { fetchCartData, sendCartData } from "./store/cart-actions";
+
+let isInitial = true;
 
 function App() {
   const loggedIn = useSelector(state => state.auth.isLoggedIn)
   const notification = useSelector(state => state.ui.notification)
+  const cart = useSelector(state => state.cart)
 
   const location = useLocation();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCartData())
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (isInitial) {
+      isInitial = false;
+      return;
+    }
+    if (cart.changed) {
+      dispatch(sendCartData(cart))
+    }
+  }, [dispatch, cart]);
 
   return (
     <>

@@ -13,7 +13,7 @@ const Product = (props) => {
                     </div>
                     <div className={classes['product-msg']}>
                         <p>{props.name}</p>
-                        <p>{`${props.price}$`}</p>
+                        <p>{`$${props.price}`}</p>
                     </div>
                 </section>
             </section>

@@ -29,7 +29,7 @@ const CartItem = (props) => {
                     <img src={image} alt={name} />
                     <h2>{name}</h2>
                 </div>
-                <span className={classes.price}>{`${price.toFixed(2)}$`}</span>
+                <span className={classes.price}>{`$${price.toFixed(2)}`}</span>
             </div>
             <div className={classes['cart-item-actions']}>
                 <div onClick={removeAllItems} className={classes['delete-btn']}>
