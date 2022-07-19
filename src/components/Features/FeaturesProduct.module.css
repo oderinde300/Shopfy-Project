@@ -1,0 +1,32 @@
+.features-product {
+    margin-left: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.features-product:hover {
+    transform: scale(1.1);
+}
+
+.features-product:hover {
+    cursor: pointer;
+}
+
+.features-product img {
+    width: 15rem;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.features-product div {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-transform: uppercase;
+    color: #363636;
+}
+
+
+.features-product a {
+    text-decoration: none;
+}

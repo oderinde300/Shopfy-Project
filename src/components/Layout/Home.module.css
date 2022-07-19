@@ -1,0 +1,54 @@
+.Home {
+    display: flex;
+    padding: 0 5rem;
+    margin-top: 50px;
+    height: 22rem;
+    max-height: 20rem;
+    justify-content: space-between;
+}
+
+.Home nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.Home nav ul li:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.Home>div {
+    flex-basis: 65%;
+}
+
+.Home>div img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.Home img:hover {
+    transform: scale(1.1);
+}
+
+.Home .aside-imgs1,
+.Home .aside-imgs2 {
+    flex-basis: 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.Home .aside-imgs1>div,
+.Home .aside-imgs2>div {
+    width: 100%;
+    height: 45%;
+    object-fit: contain;
+    border-radius: 10px;
+}

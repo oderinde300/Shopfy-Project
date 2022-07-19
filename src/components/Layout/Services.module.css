@@ -1,0 +1,41 @@
+.services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 50px;
+    margin-bottom: 50px;
+}
+
+.services-card {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+
+.services-title {
+    color: #FF9902;
+}
+
+.services-message {
+    margin-bottom: 20px;
+}
+
+.services-card>div {
+    flex-basis: 30%;
+    padding: 1rem;
+    background-color: #FF9902;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.services-card i {
+    border: 1px solid white;
+    padding: 20px;
+    border-radius: 50%;
+    color: black;
+    font-size: 2rem;
+    background-color: #fff;
+}

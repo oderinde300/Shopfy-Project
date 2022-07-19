@@ -1,0 +1,118 @@
+.cart {
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart-items {
+    margin: 3rem 1rem;
+    width: 70%;
+    max-width: 60rem;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: center;
+    color: #F68B1E;
+}
+
+.cart-items h3 {
+    text-align: left;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #EDEDED;
+}
+
+.cart-summary {
+    margin: 3rem 1rem;
+    width: 25%;
+    max-width: 25rem;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    color: #F68B1E;
+}
+
+.cart-summary-price {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+
+.cart-summary p {
+    padding: 0 0.5rem;
+    color: #363636;
+}
+
+.cart-summary>div {
+    border-bottom: 2px solid #EDEDED;
+}
+
+.cart-summary button {
+    padding: 0.7rem 2.5rem;
+    width: 100%;
+    background-color: #F68B1E;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    align-self: center;
+    justify-self: center;
+}
+
+.cart-summary button:hover,
+.cart-summary button:active {
+    background-color: #E4811C;
+    color: white;
+}
+
+.cart-items {
+    background-color: white;
+}
+
+.cart li {
+    list-style: none;
+}
+
+.empty-cart {
+    background-color: white;
+    width: 50%;
+    margin: 1.5rem auto;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.empty-cart i {
+    padding: 2rem;
+    border-radius: 50%;
+    font-size: 3rem;
+    color: #F68B1E;
+    background-color: #F5F5F5;
+}
+
+.empty-cart button {
+    padding: 0.5rem 2rem;
+    color: white;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    background-color: #F68B1E;
+    border-radius: 5px;
+    box-shadow: 2px 6px 5px -1px rgba(0, 0, 0, 0.1);
+}
+
+.empty-cart a {
+    list-style: none;
+}
+
+.empty-cart button:hover,
+.empty-cart button:active {
+    cursor: pointer;
+    background-color: #E4811C;
+}

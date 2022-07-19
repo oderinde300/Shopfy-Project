@@ -1,0 +1,137 @@
+.checkout-form-main-container {
+    display: flex;
+    justify-content: center;
+}
+
+.checkout-form-container {
+    margin: 3rem 1rem;
+    width: 70%;
+    max-width: 30rem;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    text-align: center;
+    color: #F68B1E;
+}
+
+.checkout-form-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.checkout-form-input label {
+    /* align-self: flex-start; */
+    display: block;
+    color: #363636;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.checkout-form-input input {
+    font: inherit;
+    background-color: rgba(246, 139, 30, 0.1);
+    color: #363636;
+    border-radius: 4px;
+    border: 1px solid #363636;
+    width: 100%;
+    text-align: left;
+    padding: 0.25rem;
+    outline-color: #F68B1E;
+}
+
+.checkout-form-actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkout-form-actions button {
+    margin: 0 1rem;
+    cursor: pointer;
+    font: inherit;
+    color: white;
+    background-color: #F68B1E;
+    border: 1px solid #F68B1E;
+    border-radius: 4px;
+    padding: 0.5rem 2.5rem;
+}
+
+.checkout-form-actions button:disabled,
+.checkout-form-actions button:disabled:hover,
+.checkout-form-actions button:disabled:active {
+    background-color: #ccc;
+    color: #292929;
+    border: #ccc;
+    cursor: not-allowed;
+}
+
+.actions button:hover {
+    background-color: #E4811C;
+    border-color: #E4811C;
+}
+
+.invalid label {
+    color: #ca3e51;
+}
+
+.invalid input {
+    border-color: #aa0b20;
+    outline-color: #aa0b20;
+    background-color: #ffeff1;
+}
+
+.invalid p {
+    color: #aa0b20;
+}
+
+.checkout-form-details {
+    margin: 3rem 1rem;
+    width: 25%;
+    max-width: 25rem;
+    border-radius: 6px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    color: #F68B1E;
+}
+
+.checkout-form-details p {
+    color: #363636;
+}
+
+.checkout-form-details h3 {
+    border-bottom: 1px solid #363636;
+    align-self: flex-start;
+}
+
+.checkout-price-items>p {
+    border-bottom: 1px solid #363636;
+}
+
+.checkout-price-items>p span {
+    font-weight: bold;
+}
+
+.checkout-price-details {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #363636;
+}
+
+@media (max-width: 700px) {
+    .checkout-price-details {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.loading-icon {
+    margin: 3rem auto;
+}
+
+.error-message {
+    color: #aa0b20;
+    margin: 3rem auto;
+}
