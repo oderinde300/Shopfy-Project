@@ -3,6 +3,8 @@ import { useParams, Route } from "react-router-dom";
 import HighlightedProduct from "../components/Products/HighlightedProduct";
 import { motion } from "framer-motion"
 
+import loading from '../assests/Rolling.svg'
+
 const ProductDetailsPage = () => {
     const containerVariants = {
         hidden: {
@@ -76,8 +78,11 @@ const ProductDetailsPage = () => {
                         category={products.category}
                     />
                 )}
-                {isLoading && !httpError && <p>Loading ...</p>}
-                {!isLoading && httpError && <p>{httpError}</p>}
+                {isLoading && !httpError && <img className='product-details-loader'
+                    src={loading} alt={'loading-icon'} />}
+                {!isLoading && httpError && <p
+                    className='product-details-error'
+                >{httpError}</p>}
             </Route>
         </motion.section>
     );

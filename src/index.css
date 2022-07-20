@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
 
+:root {
+  --main-color: #F68B1E;
+  --button-hover-color: #E4811C;
+  --text-colr: #363636;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -15,4 +21,13 @@ body {
 
 .app-footer {
   justify-content: flex-end;
+}
+
+.product-details-loader {
+  margin: 3rem auto;
+}
+
+.product-details-error {
+  margin: 3rem auto;
+  color: red;
 }

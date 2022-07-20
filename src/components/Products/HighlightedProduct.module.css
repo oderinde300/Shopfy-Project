@@ -58,7 +58,7 @@
     font: inherit;
     font-weight: bold;
     font-size: 1.25rem;
-    background-color: #F68B1E;
+    background-color: var(--main-color);
     box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
     color: white;
     width: 3rem;
@@ -73,7 +73,7 @@
 
 .highlighted-product .actions button:hover,
 .highlighted-product .actions button:active {
-    background-color: #E4811C;
+    background-color: var(--button-hover-color);
     color: white;
     cursor: pointer;
 }

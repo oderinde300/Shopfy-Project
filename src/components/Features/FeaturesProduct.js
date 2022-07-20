@@ -4,7 +4,7 @@ import classes from './FeaturesProduct.module.css';
 const FeaturesProduct = (props) => {
     return (
         <section className={classes['features-product']}>
-            <Link to={`./products/${props.id}`}>
+            <Link to={`./products/allProducts/${props.id}`}>
                 <img src={props.image} alt={props.name} />
                 <div>
                     <p>{props.name}</p>

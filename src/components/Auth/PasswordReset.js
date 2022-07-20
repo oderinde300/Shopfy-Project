@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import classes from './PassordReset.module.css';
+import classes from './PasswordReset.module.css';
 import { useSelector } from 'react-redux/es/exports';
 
 

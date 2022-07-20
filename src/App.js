@@ -62,6 +62,9 @@ function App() {
           <Route path='/' exact>
             <HomePage />
           </Route>
+          <Route path='/home' exact>
+            <HomePage />
+          </Route>
           {
             !loggedIn && (
               <Route path='/auth'>
