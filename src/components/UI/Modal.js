@@ -1,13 +1,11 @@
 import ReactDOM from 'react-dom';
 import { useDispatch, } from 'react-redux';
-import { useHistory } from 'react-router-dom';
 import { checkoutActions } from '../../store/checkout-slice';
 import { cartActions } from '../../store/cart-slice';
 import classes from './Modal.module.css';
 
 const Backdrop = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
     const onHideCheckout = () => {
         dispatch(cartActions.clearCart())
         dispatch(checkoutActions.hideCheckoutHandler());

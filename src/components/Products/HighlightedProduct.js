@@ -1,6 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { cartActions } from '../../store/cart-slice';
 import { uiActions } from '../../store/ui-slice';
 
@@ -11,8 +10,6 @@ const HighlightedProduct = (props) => {
     const [productQuantity, setProductQuantity] = useState(1);
 
     const dispatch = useDispatch();
-
-    const cartItems = useSelector(state => state.cart.items)
 
     const { image, id, price, name } = props;
 

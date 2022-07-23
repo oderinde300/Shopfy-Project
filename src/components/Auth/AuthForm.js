@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import classes from './AuthForm.module.css'
 import { authActions } from '../../store/auth-slice';
 import { uiActions } from '../../store/ui-slice';
 import useInput from '../../hooks/use-input';
+import classes from './AuthForm.module.css'
+
 
 const validEmail = value => value.trim() !== '' && value.includes('@');
 const validPassword = value => value.trim().length >= 6;

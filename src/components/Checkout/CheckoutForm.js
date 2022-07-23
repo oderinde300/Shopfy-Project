@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 
-import { authActions } from '../../store/auth-slice';
 import { cartActions } from '../../store/cart-slice';
 import { checkoutActions } from '../../store/checkout-slice';
 import useInput from '../../hooks/use-input';

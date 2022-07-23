@@ -18,6 +18,12 @@
     }
 }
 
+@media screen and (max-width: 650px) {
+    .highlighted-product {
+        flex-direction: column;
+    }
+}
+
 .highlighted-product a {
     text-decoration: none;
 }
