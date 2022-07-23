@@ -22,6 +22,18 @@
     flex-direction: column;
 }
 
+@media (max-width: 600px) {
+    .summary {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .summary {
+        flex-direction: row;
+    }
+}
+
 
 .cart-item-actions {
     width: 100%;
@@ -88,6 +100,7 @@ i {
         flex-direction: row;
     }
 }
+
 
 .cart-item .actions button {
     font: inherit;

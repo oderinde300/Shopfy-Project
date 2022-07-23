@@ -5,10 +5,17 @@
     padding: 0 2rem;
     width: 70%;
     max-width: 50rem;
-    margin: 1rem auto;
+    margin: 3rem auto;
     background-color: white;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
+}
+
+@media (max-width: 950px) {
+    .highlighted-product {
+        width: 95%;
+        margin: 1rem auto;
+    }
 }
 
 .highlighted-product a {

@@ -1,7 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartItem from './CartItem';
-
 import classes from './Cart.module.css';
 
 const Cart = () => {
@@ -9,6 +8,7 @@ const Cart = () => {
     const totalAmount = useSelector(state => state.cart.totalAmount);
     const totalProducts = useSelector(state => state.cart.totalProducts);
     const loggedIn = useSelector(state => state.auth.isLoggedIn);
+
 
     const cart = cartItems.map(item => {
         return <CartItem
@@ -44,6 +44,7 @@ const Cart = () => {
         checkoutPath = '/auth'
     }
 
+
     return (
         <section className={classes.cart}>
             <ul className={classes['cart-items']}>
@@ -60,7 +61,9 @@ const Cart = () => {
                     <p>{`$${totalAmount.toFixed(2)}`}</p>
                 </div>
                 <Link to={checkoutPath}>
-                    <button>CHECKOUT({`$${totalAmount.toFixed(2)}`})</button>
+                    <button>
+                        CHECKOUT
+                        <span>({`$${totalAmount.toFixed(2)}`})</span></button>
                 </Link>
             </div>
         </section>

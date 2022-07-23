@@ -30,6 +30,7 @@ const authInitialState = {
     token: null,
     isLoggedIn: false,
     API_KEY: 'AIzaSyDA4GsuHNCgK9BAZTHRZSks_Mx6qcNocMQ',
+    isCheckedOut: false
 };
 
 
@@ -38,6 +39,12 @@ const authSlice = createSlice({
     name: 'auth',
     initialState: authInitialState,
     reducers: {
+        isCheckedOutHandler(state) {
+            state.isCheckedOut = true;
+        },
+        isCheckedInHandler(state) {
+            state.isCheckedOut = false;
+        },
         loginHandler(state, action) {
             state.token = action.payload.token;
             state.isLoggedIn = true;

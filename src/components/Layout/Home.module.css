@@ -52,3 +52,24 @@
     object-fit: contain;
     border-radius: 10px;
 }
+
+@media (max-width: 800px) {
+    .Home .aside-imgs1 {
+        flex-basis: 30%;
+    }
+
+    .Home .aside-imgs2 {
+        flex-basis: 0;
+    }
+
+    .aside-imgs2>div {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .Home {
+        flex-direction: column-reverse;
+        overflow: scroll;
+    }
+}

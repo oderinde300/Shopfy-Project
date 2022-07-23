@@ -3,6 +3,8 @@
     justify-content: center;
 }
 
+
+
 .checkout-form-container {
     margin: 3rem 1rem;
     width: 70%;
@@ -127,8 +129,37 @@
     }
 }
 
+@media screen and (max-width: 650px) {
+    .checkout-form-main-container {
+        flex-direction: column-reverse;
+        width: 90%;
+    }
+
+    .checkout-form-container {
+        width: 100%;
+    }
+
+    .checkout-price-details {
+        flex-direction: row;
+    }
+
+    .checkout-form-details {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .checkout-form-actions button {
+        width: 8rem;
+    }
+}
+
 .loading-icon {
     margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
 }
 
 .error-message {

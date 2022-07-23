@@ -39,6 +39,65 @@
     font-size: 1rem;
 }
 
+@media screen and (max-width: 850px) {
+    .cart-summary-price {
+        flex-direction: column;
+    }
+
+    .cart-summary button span {
+        visibility: hidden;
+        width: 100%;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .cart {
+        padding: 0 2rem;
+    }
+
+    .cart-items {
+        width: 65%;
+    }
+
+    .cart-summary {
+        width: 30%;
+    }
+
+    .cart-summary-price {
+        flex-direction: column;
+    }
+
+    .cart-summary button span {
+        visibility: hidden;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .cart {
+        flex-direction: column;
+    }
+
+    .cart-items {
+        width: 90%;
+    }
+
+    .cart-summary {
+        width: 90%;
+    }
+
+    .cart-summary-price {
+        flex-direction: row;
+    }
+
+    .cart-summary button span {
+        visibility: visible;
+        width: 100%;
+    }
+}
+
+
 .cart-summary p {
     padding: 0 0.5rem;
     color: #363636;
@@ -86,14 +145,45 @@
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    text-align: center;
 }
 
-.empty-cart i {
-    padding: 2rem;
+@media screen and (max-width: 950px) {
+    .empty-cart {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .empty-cart {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .empty-cart {
+        width: 95%;
+        text-align: center;
+    }
+}
+
+.empty-cart-icon {
+    width: 8rem;
+    height: 8rem;
+    background-color: #F5F5F5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.empty-cart-icon i {
     font-size: 3rem;
     color: #F68B1E;
-    background-color: #F5F5F5;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .empty-cart button {
@@ -105,6 +195,7 @@
     background-color: #F68B1E;
     border-radius: 5px;
     box-shadow: 2px 6px 5px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 }
 
 .empty-cart a {

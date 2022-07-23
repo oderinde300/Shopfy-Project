@@ -1,26 +1,26 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+
+import { authActions } from '../../store/auth-slice';
+import { cartActions } from '../../store/cart-slice';
+import { checkoutActions } from '../../store/checkout-slice';
 import useInput from '../../hooks/use-input';
 import classes from './CheckoutForm.module.css';
 import loading from '../../assests/Rolling.svg'
+import CheckoutDetails from './CheckoutDetails';
 
 const isNotEmpty = value => value.trim() !== '';
 const isFiveChars = value => value.trim().length === 5;
 
 const CheckoutForm = () => {
+    const dispatch = useDispatch();
     const history = useHistory();
 
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [httpError, setHttpError] = useState(false)
 
-    const onCancel = () => {
-        history.push('/cart')
-    };
-
     const cartItems = useSelector(state => state.cart.items);
-    const totalProducts = useSelector(state => state.cart.totalProducts);
-    const totalAmount = useSelector(state => state.cart.totalAmount);
 
     const {
         value: enteredName,
@@ -30,7 +30,6 @@ const CheckoutForm = () => {
         inputBlurHandler: nameInputBlurHandler,
         reset: nameInputReset,
     } = useInput(isNotEmpty);
-
     const {
         value: enteredStreet,
         isValid: enteredStreetIsValid,
@@ -39,7 +38,6 @@ const CheckoutForm = () => {
         inputBlurHandler: streetInputBlurHandler,
         reset: streetInputReset,
     } = useInput(isNotEmpty);
-
     const {
         value: enteredPostalCode,
         isValid: enteredPostalCodeIsValid,
@@ -48,7 +46,6 @@ const CheckoutForm = () => {
         inputBlurHandler: postalCodeInputBlurHandler,
         reset: postalCodeInputReset,
     } = useInput(isFiveChars);
-
     const {
         value: enteredCity,
         isValid: enteredCityIsValid,
@@ -77,16 +74,13 @@ const CheckoutForm = () => {
             postalCodeInputReset();
             cityInputReset();
 
-            history.push('/checkout/msg')
         }
-
         const userData = {
             name: enteredName,
             city: enteredCity,
             postalCOde: enteredPostalCode,
             street: enteredStreet,
         }
-
         const submitData = async () => {
             try {
                 setIsSubmitting(true);
@@ -99,6 +93,9 @@ const CheckoutForm = () => {
                     })
                 }
                 )
+                if (response.ok) {
+                    history.push('/checkout/msg')
+                }
             } catch (error) {
                 setIsSubmitting(false);
                 setHttpError(error.message);
@@ -107,6 +104,12 @@ const CheckoutForm = () => {
         }
 
         submitData();
+        dispatch(checkoutActions.showCheckoutHandler());
+        dispatch(cartActions.removeAllItemsFromCart());
+    };
+
+    const onCancel = () => {
+        history.push('/cart')
     };
 
     const nameControlClasses =
@@ -170,27 +173,7 @@ const CheckoutForm = () => {
                         </form>
                     </section>
 
-                    <section className={classes['checkout-form-details']}>
-                        <h3>YOUR ORDER ({totalProducts} item(s))</h3>
-                        <div className={classes['checkout-price-items']}>
-                            {cartItems.map(item => <p key={item.id}>{item.name}
-                                <span>x{item.quantity}</span>
-                            </p>
-                            )}
-                        </div>
-                        <div className={classes['checkout-price-details']}>
-                            <p>Subtotal</p>
-                            <p>{`$${totalAmount.toFixed(2)}`}</p>
-                        </div>
-                        <div className={classes['checkout-price-details']}>
-                            <p>Delivery fee</p>
-                            <p>$5.00</p>
-                        </div>
-                        <div className={classes['checkout-price-details']}>
-                            <p>Total Amount</p>
-                            <p>{`$${(totalAmount + 5).toFixed(2)}`}</p>
-                        </div>
-                    </section>
+                    <CheckoutDetails />
                 </section>
             )}
             {isSubmitting && !httpError && <div className={classes['loading-icon']}>

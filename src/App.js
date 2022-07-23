@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { AnimatePresence } from "framer-motion";
 
 import Notification from "./components/Layout/Notifaction";
-import Header from "./components/Navigation/Header";
+import NavBar from "./components/Navigation/NavBar";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import CartPage from "./pages/CartPage";
 import HomePage from "./pages/HomePage";
@@ -24,6 +24,8 @@ import { fetchCartData, sendCartData } from "./store/cart-actions";
 let isInitial = true;
 
 function App() {
+  const showCheckout = useSelector(state => state.checkout.showCheckout);
+
   const loggedIn = useSelector(state => state.auth.isLoggedIn)
   const notification = useSelector(state => state.ui.notification)
   const cart = useSelector(state => state.cart)
@@ -56,7 +58,7 @@ function App() {
           />
         )
       }
-      <Header />
+      <NavBar />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
           <Route path='/' exact>
@@ -86,7 +88,7 @@ function App() {
             )
           }
           {
-            loggedIn && (
+            loggedIn && showCheckout && (
               <Route path='/checkout/msg'>
                 <CheckoutMsgPage />
               </Route>
